@@ -1,0 +1,15 @@
+{
+  "name": "ES-UI-library",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:eunsonny/ES-UI-library.git",
+  "author": "eunsonny <eunsonnny@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "devDependencies": {
+    "rollup": "^3.26.2"
+  }
+}
