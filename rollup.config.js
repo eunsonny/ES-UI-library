@@ -1,3 +1,4 @@
+import babel from 'rollup-plugin-babel'
 
 export default {
   input: 'src/index.js',
@@ -12,5 +13,10 @@ export default {
       format: 'cjs',
       sourcemap: true,
     },
+  ],
+  plugins: [
+    babel({
+      exclude: '.yarn/**', // only transpile our source code
+    }),
   ],
 };

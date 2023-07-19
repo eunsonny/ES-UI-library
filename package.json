@@ -12,7 +12,16 @@
     "dev": "rollup -c -w"
   },
   "devDependencies": {
-    "rollup": "^3.26.2"
+    "@babel/core": "^7.22.9",
+    "@babel/plugin-transform-runtime": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "rollup": "^3.26.2",
+    "rollup-plugin-babel": "^4.4.0"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  }
 }
