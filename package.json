@@ -13,5 +13,6 @@
   },
   "devDependencies": {
     "rollup": "^3.26.2"
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }
