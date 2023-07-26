@@ -1,6 +1,5 @@
-import React from "react"
+import React from "react";
 
 export const Hello = () => {
-  return <div>Hello</div>
-}
-
+  return <div>Hello World!</div>;
+};

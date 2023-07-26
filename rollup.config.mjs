@@ -1,5 +1,5 @@
-import babel from 'rollup-plugin-babel'
-import nodeResolve from '@rollup/plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve';
+import babel from "@rollup/plugin-babel";
 
 export default {
   input: 'src/index.js',
@@ -15,11 +15,13 @@ export default {
       sourcemap: true,
     },
   ],
+  external: [/@babel\/runtime/],
   plugins: [
-    nodeResolve({ extensions: ['.js', '.jsx'] }),
+    resolve({ extensions: ['.js', '.jsx'] }), 
     babel({
-      exclude: '.yarn/**', // only transpile our source code
-      runtimeHelpers: true
+      babelHelpers: "runtime",
+      exclude: '.yarn/**',
+      extensions: ['.js', '.jsx']
     }),
   ],
 };
