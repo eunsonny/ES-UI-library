@@ -1,8 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve';
 import babel from "@rollup/plugin-babel";
+import typescript from "@rollup/plugin-typescript";
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: [
     {
       file: "dist/bundle.esm.js",
@@ -17,11 +18,12 @@ export default {
   ],
   external: [/@babel\/runtime/],
   plugins: [
-    resolve({ extensions: ['.js', '.jsx'] }), 
+    resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }), 
     babel({
       babelHelpers: "runtime",
       exclude: '.yarn/**',
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
+    typescript()
   ],
 };
