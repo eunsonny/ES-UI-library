@@ -22,6 +22,11 @@ export default {
     babel({
       babelHelpers: "runtime",
       exclude: '.yarn/**',
+      presets: [
+        "@babel/preset-env",
+        "@babel/preset-react",
+        "@babel/preset-typescript",
+      ],
       extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
     typescript()
