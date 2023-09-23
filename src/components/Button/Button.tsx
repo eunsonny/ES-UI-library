@@ -13,8 +13,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
   return (
     <button 
       ref={ref} 
-      className='w-[76px] h-[24px] bg-[red]' 
-      // style={{ backgroundColor: 'pink'}} 
+      className='w-[172px] h-[44px] text-[14px] text-[#FBF4F7] bg-[#D4608F] rounded-[40px]' 
       {...rest}
     >
       {children}
