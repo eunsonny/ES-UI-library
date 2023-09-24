@@ -2,7 +2,6 @@ import React, { ButtonHTMLAttributes, forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import './Button.css'
 
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'large' | 'medium' | 'small'
   primary?: boolean

@@ -1,9 +1,11 @@
 import resolve from '@rollup/plugin-node-resolve';
 import babel from "@rollup/plugin-babel";
 import typescript from "@rollup/plugin-typescript";
+import postcss from 'rollup-plugin-postcss'
+import commonjs from '@rollup/plugin-commonjs'
 
 export default {
-  input: 'src/index.ts',
+  input: 'src/components/Button/index.ts',
   output: [
     {
       file: "dist/bundle.esm.js",
@@ -18,6 +20,7 @@ export default {
   ],
   external: [/@babel\/runtime/],
   plugins: [
+    commonjs(),
     resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }), 
     babel({
       babelHelpers: "runtime",
@@ -29,6 +32,18 @@ export default {
       ],
       extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
-    typescript()
+    typescript({
+      exclude: [
+        'node_modules',
+        '**/stories',
+        '**/*.stories.{ts,tsx}'
+      ]
+    }),
+    postcss({
+      config: {
+        path: './postcss.config.js'
+    },
+    extensions: ['.css'], 
+    })
   ],
 };
