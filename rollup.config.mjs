@@ -3,21 +3,25 @@ import babel from "@rollup/plugin-babel";
 import typescript from "@rollup/plugin-typescript";
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
+import path from 'path'
 
 export default {
-  input: 'src/components/Button/index.ts',
-  output: [
-    {
-      file: "dist/bundle.esm.js",
-      format: 'esm',
-      sourcemap: true,
-    },
-    {
-      file: "./dist/bundle.js",
-      format: 'cjs',
-      sourcemap: true,
-    },
-  ],
+  input: {
+    index: path.join('./src', 'index')
+  },
+  output: ['cjs', 'esm'].map(getOutputOption),
+  // output: [
+  //   {
+  //     file: "dist/bundle.esm.js",
+  //     format: 'esm',
+  //     sourcemap: true,
+  //   },
+  //   {
+  //     file: "./dist/bundle.js",
+  //     format: 'cjs',
+  //     sourcemap: true,
+  //   },
+  // ],
   external: [/@babel\/runtime/],
   plugins: [
     commonjs(),
@@ -33,6 +37,7 @@ export default {
       extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
     typescript({
+      include: ['./src/**/*.{ts,tsx}'],
       exclude: [
         'node_modules',
         '**/stories',
@@ -47,3 +52,16 @@ export default {
     })
   ],
 };
+
+/** @type {() => import('rollup').OutputOptions} */
+function getOutputOption(format) {
+  return {
+    dir: './package',
+    sourcemap: true,
+    format,
+    entryFileNames: `[name].${format}.js`,
+    interop: 'auto',
+    preserveModules: true,
+    preserveModulesRoot: './src',
+  };
+}
