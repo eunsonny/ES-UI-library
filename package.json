@@ -1,11 +1,13 @@
 {
   "name": "ES-UI-library",
   "version": "1.0.0",
-  "main": "./dist/bundle.js",
-  "module": "dist/bundle.esm.js",
+  "license": "MIT",
   "repository": "git@github.com:eunsonny/ES-UI-library.git",
   "author": "eunsonny <eunsonnny@gmail.com>",
-  "license": "MIT",
+  "type": "module",
+  "main": "./dist/bundle.js",
+  "module": "dist/bundle.esm.js",
+  "sideEffect": false,
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
