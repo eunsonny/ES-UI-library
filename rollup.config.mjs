@@ -11,18 +11,6 @@ export default {
     index: path.join('./src', 'index')
   },
   output: ['cjs', 'esm'].map(getOutputOption),
-  // output: [
-  //   {
-  //     file: "dist/bundle.esm.js",
-  //     format: 'esm',
-  //     sourcemap: true,
-  //   },
-  //   {
-  //     file: "./dist/bundle.js",
-  //     format: 'cjs',
-  //     sourcemap: true,
-  //   },
-  // ],
   external: [/@babel\/runtime/, /.yarn/],
   plugins: [
     commonjs(),
