@@ -40,7 +40,6 @@ export default {
         path: './postcss.config.js'
       },
       extensions: ['.css'], 
-      extract: true,
     }),
     peerDepsExternal(),
   ],

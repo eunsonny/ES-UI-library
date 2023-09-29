@@ -7,10 +7,13 @@ import { Button } from '@eunsonny/ui'
 function App() {
   const [count, setCount] = useState(0)
 
+  const handleClick = () => {
+    console.log('콘솔')
+  }
+
   return (
     <>
-    <Button>버튼</Button>
-      
+      <Button onClick={handleClick}>버튼</Button>
     </>
   )
 }
