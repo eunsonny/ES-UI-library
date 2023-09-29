@@ -6,15 +6,13 @@
   "author": "eunsonny <eunsonnny@gmail.com>",
   "type": "module",
   "sideEffect": false,
-  "files": [
-    "package"
-  ],
-  "main": "./package/index.cjs.js",
-  "module": "./package/index.esm.js",
+  "files": ["dist"],
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "exports": {
     ".": {
-      "import": "./package/index.esm.js",
-      "require": "./package/index.cjs.js"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
     }
   },
   "scripts": {

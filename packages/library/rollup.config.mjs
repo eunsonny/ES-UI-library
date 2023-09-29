@@ -48,7 +48,7 @@ export default {
 /** @type {() => import('rollup').OutputOptions} */
 function getOutputOption(format) {
   return {
-    dir: './package',
+    dir: './dist',
     sourcemap: true,
     format,
     entryFileNames: `[name].${format}.js`,
