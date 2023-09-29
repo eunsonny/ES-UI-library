@@ -1,13 +1,19 @@
 {
-  "name": "ES-UI-library",
-  "version": "1.0.0",
+  "name": "es-ui-library",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": "git@github.com:eunsonny/ES-UI-library.git",
   "author": "eunsonny <eunsonnny@gmail.com>",
   "type": "module",
-  "main": "./dist/bundle.js",
-  "module": "dist/bundle.esm.js",
   "sideEffect": false,
+  "main": "./package/index.cjs.js",
+  "module": "./package/index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./package/index.esm.js",
+      "require": "./package/index.cjs.js"
+    }
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -61,5 +67,8 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "bugs": {
+    "url": "https://github.com/eunsonny/ES-UI-library/issues"
   }
 }
