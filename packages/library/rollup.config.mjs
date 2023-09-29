@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import babel from "@rollup/plugin-babel";
-import typescript from "@rollup/plugin-typescript";
+// import typescript from "@rollup/plugin-typescript";
+import typescript from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
@@ -12,10 +13,28 @@ export default {
   },
   output: ['cjs', 'esm'].map(getOutputOption),
   external: [/@babel\/runtime/, /.yarn/],
-  // external: [/@babel\/runtime/],
   plugins: [
     commonjs(),
     resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }), 
+    typescript({
+      include: ['./src/**/*.{ts,tsx}'],
+      exclude: [
+        '.yarn/**',
+        'node_modules',
+        'rollup.config.mjs',
+        '**/stories',
+        '**/*.stories.{ts,tsx}'
+      ],
+      tsconfigOverride: {
+        compilerOptions: {
+          noEmit: false,
+          emitDeclarationOnly: true,
+          mapRoot: process.cwd(),
+          declarationDir: path.join('./dist'),
+        },
+      },
+      useTsconfigDeclarationDir: true,
+    }),
     babel({
       babelHelpers: "runtime",
       exclude: ['.yarn/**'],
@@ -26,14 +45,6 @@ export default {
       ],
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
       plugins: ['@babel/plugin-transform-runtime']
-    }),
-    typescript({
-      include: ['./src/**/*.{ts,tsx}'],
-      exclude: [
-        'node_modules',
-        '**/stories',
-        '**/*.stories.{ts,tsx}'
-      ]
     }),
     postcss({
       config: {

@@ -1,12 +1,68 @@
+// {
+//   "compilerOptions": {
+//     "target": "es5",
+//     "lib": ["dom", "esnext"],
+//     "jsx": "react",
+//     "module": "es6",
+//     "moduleResolution": "node",
+//     "baseUrl": "./",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "sourceMap": true,
+//     "declaration": true,
+//   }
+// }
+
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": ["dom", "esnext"],
-    "jsx": "react",
-    "module": "es6",
-    "moduleResolution": "node",
-    "baseUrl": "./",
     "strict": true,
-    "esModuleInterop": true
-  }
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+        "sourceMap": true,
+    "declaration": true,
+  },
+  "include": ["src/**/*"]
 }
+
+// {
+//   "compilerOptions": {
+//     "target": "ESNext",
+//     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+//     "jsx": "react-jsx",
+//     "module": "ESNext",
+//     "moduleResolution": "node",
+//     "allowJs": false,
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+//     "strict": true,
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "allowSyntheticDefaultImports": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "baseUrl": ".",
+//     "sourceMap": true,
+//     "declaration": true,
+//     "declarationMap": true,
+//     "noEmit": true,
+//     "paths": {
+//       "@/*": ["src/*"]
+//     }
+//   },
+//   "include": ["custom.d.ts", "src/**/*"],
+//   "exclude": [
+//     "node_modules",
+//     "package",
+//     "storybook-static",
+//     "rollup.config.mjs"
+//   ]
+// }

@@ -4,6 +4,7 @@
 
 # build output
 /package
+/dist
 
 # yarn
 .pnp.*
