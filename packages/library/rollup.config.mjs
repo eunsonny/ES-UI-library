@@ -12,7 +12,7 @@ export default {
     index: path.join('./src', 'index')
   },
   output: ['cjs', 'esm'].map(getOutputOption),
-  external: [/@babel\/runtime/, /.yarn/],
+  external: [/@babel\/runtime/, /.yarn/, '@babel/runtime/helpers/extends'],
   plugins: [
     commonjs(),
     resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }), 
