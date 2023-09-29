@@ -1,75 +1,19 @@
 {
-  "name": "@eunsonny/ui",
-  "version": "0.0.1",
-  "license": "MIT",
-  "repository": "git@github.com:eunsonny/ES-UI-library.git",
-  "author": "eunsonny <eunsonnny@gmail.com>",
-  "type": "module",
-  "sideEffect": false,
-  "main": "./package/index.cjs.js",
-  "module": "./package/index.esm.js",
-  "exports": {
-    ".": {
-      "import": "./package/index.esm.js",
-      "require": "./package/index.cjs.js"
-    }
-  },
+  "name": "es-ui-library",
+  "version": "1.0.0",
+  "description": "Tree Shaking을 지원하는 나만의 UI 라이브러리 만들기",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "publish": "npm publish --access=public",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "yarn workspace example dev",
+    "build": "yarn workspace @eunsonny/ui build",
+    "storybook": "yarn workspace @eunsonny/ui storybook",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "@babel/core": "^7.22.9",
-    "@babel/plugin-transform-runtime": "^7.22.15",
-    "@babel/preset-env": "^7.22.9",
-    "@babel/preset-react": "^7.22.5",
-    "@babel/preset-typescript": "^7.22.5",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^25.0.4",
-    "@rollup/plugin-node-resolve": "^15.2.1",
-    "@rollup/plugin-typescript": "^11.1.2",
-    "@storybook/addon-docs": "^7.4.1",
-    "@storybook/addon-essentials": "^7.4.1",
-    "@storybook/addon-interactions": "^7.4.1",
-    "@storybook/addon-links": "^7.4.1",
-    "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.4.1",
-    "@storybook/react": "^7.4.1",
-    "@storybook/react-vite": "^7.4.1",
-    "@storybook/testing-library": "^0.2.0",
-    "@types/react": "^18.2.16",
-    "@types/react-dom": "^18.2.7",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.45.0",
-    "eslint-plugin-storybook": "^0.6.13",
-    "postcss": "^8.4.30",
-    "prettier": "^3.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup": "^3.12.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "storybook": "^7.4.1",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss": "^3.3.3",
-    "tslib": "^2.6.1",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9"
-  },
-  "packageManager": "yarn@3.6.3",
-  "peerDependencies": {
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
-  },
-  "bugs": {
-    "url": "https://github.com/eunsonny/ES-UI-library/issues"
-  }
+  "author": "eunsonny",
+  "license": "MIT"
 }
