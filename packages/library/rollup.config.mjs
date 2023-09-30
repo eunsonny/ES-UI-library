@@ -13,13 +13,13 @@ export default {
   },
   output: ['cjs', 'esm'].map(getOutputOption),
   external: [/@babel\/runtime/, /.yarn/, '@babel/runtime/helpers/extends'],
+  // external: [/@babel\/runtime/, /.yarn/],
   plugins: [
     commonjs(),
     resolve({ extensions: ['.js', '.jsx', '.ts', '.tsx'] }), 
     typescript({
       include: ['./src/**/*.{ts,tsx}'],
       exclude: [
-        '.yarn/**',
         'node_modules',
         'rollup.config.mjs',
         '**/stories',

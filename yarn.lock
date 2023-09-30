@@ -1807,17 +1807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eunsonny/ui@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@eunsonny/ui@npm:0.0.1"
-  peerDependencies:
-    react: ">=17.0.0"
-    react-dom: ">=17.0.0"
-  checksum: 21caf19b3fd1dbc42a7fc4c9f4531e66797b4775f2d561e40a2d504a2d849e0ebd83c4383e211dee3bd130fd7fcba68f981a9e688d1be3e7dead03061d6bf7c4
-  languageName: node
-  linkType: hard
-
-"@eunsonny/ui@workspace:packages/library":
+"@eunsonny/ui@0.0.5, @eunsonny/ui@workspace:packages/library":
   version: 0.0.0-use.local
   resolution: "@eunsonny/ui@workspace:packages/library"
   dependencies:
@@ -6436,7 +6426,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example@workspace:apps/example"
   dependencies:
-    "@eunsonny/ui": 0.0.1
+    "@eunsonny/ui": 0.0.5
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
     "@typescript-eslint/eslint-plugin": ^6.0.0
