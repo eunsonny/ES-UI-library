@@ -1,6 +1,5 @@
 import resolve from '@rollup/plugin-node-resolve';
 import babel from "@rollup/plugin-babel";
-// import typescript from "@rollup/plugin-typescript";
 import typescript from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs'
@@ -12,7 +11,6 @@ export default {
     index: path.join('./src', 'index')
   },
   output: ['cjs', 'esm'].map(getOutputOption),
-  // external: [/@babel\/runtime/, /.yarn/, '@babel/runtime/helpers/extends'],
   external: [/@babel\/runtime/, /.yarn/],
   plugins: [
     commonjs(),
@@ -44,7 +42,6 @@ export default {
         "@babel/preset-typescript",
       ],
       extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      plugins: ['@babel/plugin-transform-runtime']
     }),
     postcss({
       config: {
