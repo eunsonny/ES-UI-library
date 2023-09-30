@@ -1,6 +1,6 @@
 {
   "name": "@eunsonny/ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "repository": "git@github.com:eunsonny/ES-UI-library.git",
   "author": "eunsonny <eunsonnny@gmail.com>",
@@ -15,7 +15,8 @@
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/index.cjs.js",
+      "types":  "./dist/index.d.ts"
     }
   },
   "scripts": {
