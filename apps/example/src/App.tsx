@@ -2,7 +2,6 @@
 
 
 import { Button } from '@eunsonny/ui'
-import { Input } from '@eunsonny/ui'
 
 function App() {
 
@@ -12,7 +11,6 @@ function App() {
 
   return (
     <>
-    <Input disabled />
       <Button onClick={handleClick}>버튼</Button>
     </>
   )
