@@ -10,7 +10,8 @@ export default {
   input: {
     index: path.join('./src', 'index')
   },
-  output: ['cjs', 'esm'].map(getOutputOption),
+  // output: ['cjs', 'esm'].map(getOutputOption),
+  output: [ 'esm'].map(getOutputOption),
   external: [/@babel\/runtime/, /.yarn/],
   plugins: [
     commonjs(),
@@ -47,7 +48,8 @@ export default {
       config: {
         path: './postcss.config.js'
       },
-      extensions: ['.css'], 
+      extensions: ['.css'],
+      extract: true
     }),
     peerDepsExternal(),
   ],

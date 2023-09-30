@@ -1807,7 +1807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eunsonny/ui@0.0.5, @eunsonny/ui@workspace:packages/library":
+"@eunsonny/ui@0.0.9, @eunsonny/ui@workspace:packages/library":
   version: 0.0.0-use.local
   resolution: "@eunsonny/ui@workspace:packages/library"
   dependencies:
@@ -6426,7 +6426,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example@workspace:apps/example"
   dependencies:
-    "@eunsonny/ui": 0.0.5
+    "@eunsonny/ui": 0.0.9
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
     "@typescript-eslint/eslint-plugin": ^6.0.0
